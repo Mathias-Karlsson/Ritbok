@@ -26,7 +26,10 @@ namespace Ritbok
 
         public override void Rita(Pen p, Graphics g)
         {
-            throw new NotImplementedException();
+            Bitmap bild = new Bitmap(800, 600);
+            Graphics b = Graphics.FromImage(bild);
+            b.DrawLine(Pens.Black, 10, 10, 300, 300);
+            b.Dispose();
         }
     }
 }
