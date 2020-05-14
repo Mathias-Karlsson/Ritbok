@@ -73,10 +73,10 @@
             this.cube.AutoSize = true;
             this.cube.Location = new System.Drawing.Point(12, 113);
             this.cube.Name = "cube";
-            this.cube.Size = new System.Drawing.Size(62, 17);
+            this.cube.Size = new System.Drawing.Size(51, 17);
             this.cube.TabIndex = 2;
             this.cube.TabStop = true;
-            this.cube.Text = "Kvadrat";
+            this.cube.Text = "Circle";
             this.cube.UseVisualStyleBackColor = true;
             this.cube.CheckedChanged += new System.EventHandler(this.cube_CheckedChanged);
             // 
@@ -111,7 +111,9 @@
             this.pictureBox1.Size = new System.Drawing.Size(433, 331);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown_1);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove_1);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp_1);
             // 
             // colorwhite
             // 

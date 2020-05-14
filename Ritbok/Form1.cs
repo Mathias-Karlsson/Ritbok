@@ -12,42 +12,85 @@ namespace Ritbok
 {
     public partial class Form1 : Form
     {
+        RitVerktyg ritVerktyg;
+
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            Bitmap bild = new Bitmap(800, 600);
-            Graphics b = Graphics.FromImage(bild);
-            b.DrawLine(Pens.Black, 10, 10, 300, 300);
-            b.Dispose();
+            if (ritVerktyg != null)
+            {
+                ritVerktyg.MusNer(e.X, e.Y);
+            }
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (ritVerktyg != null)
+            {
+                ritVerktyg.MusNer(e.X, e.Y);
+            }
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (ritVerktyg != null)
+            {
+                ritVerktyg.MusNer(e.X, e.Y);
+            }
         }
 
         private void line_CheckedChanged(object sender, EventArgs e)
         {
-            
+            ritVerktyg = new LinjeVerktyg(pictureBox1);
         }
 
         private void long_box_CheckedChanged(object sender, EventArgs e)
         {
-
+            ritVerktyg = new RektangelVerktyg(pictureBox1);
         }
 
         private void cube_CheckedChanged(object sender, EventArgs e)
         {
-
+            ritVerktyg = new EllipsVerktyg(pictureBox1);
         }
 
         private void triangel_CheckedChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pen_CheckedChanged(object sender, EventArgs e)
         {
+            ritVerktyg = new PennVerktyg(pictureBox1);
+        }
 
+        private void pictureBox1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            if (ritVerktyg != null)
+            {
+                ritVerktyg.MusNer(e.X, e.Y);
+            }
+        }
+
+        private void pictureBox1_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            if (ritVerktyg != null)
+            {
+                ritVerktyg.MusDrag(e.X, e.Y);
+            }
+        }
+
+        private void pictureBox1_MouseUp_1(object sender, MouseEventArgs e)
+        {
+            if (ritVerktyg != null)
+            {
+                ritVerktyg.MusUpp(e.X, e.Y);
+            }
         }
     }
 }
