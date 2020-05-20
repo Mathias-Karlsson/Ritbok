@@ -17,31 +17,28 @@ namespace Ritbok
 
         public override void MusDrag(int x, int y)
         {
-            if (penDown == true)
-            {
-                Bitmap pict = new Bitmap(pictureBox1.BackgroundImage);
-
-                Graphics g = Graphics.FromImage(pict);
-                Rita(Pens.Black, g);
-                pictureBox1.BackgroundImage = pict;
-
-                Coordinate c = new Coordinate(x, y);
-                listOfXY.Add(c);
-            }
         }
 
         public override void MusNer(int x, int y)
         {
-            penDown = true;
             Coordinate c = new Coordinate(x, y);
             listOfXY.Add(c);
         }
 
         public override void MusUpp(int x, int y)
         {
-            penDown = false;
+
+            Coordinate c = new Coordinate(x, y);
+            listOfXY.Add(c);
+
+            Bitmap pict = new Bitmap(pictureBox1.BackgroundImage);
+
+            Graphics g = Graphics.FromImage(pict);
+            Rita(Pens.Black, g);
+            pictureBox1.BackgroundImage = pict;
+
             listOfXY.Clear();
-            oldBitmaps.Add(pictureBox1.BackgroundImage);
+
         }
 
         public override void Rita(Pen p, Graphics g)

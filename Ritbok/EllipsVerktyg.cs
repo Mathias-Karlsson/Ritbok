@@ -17,39 +17,40 @@ namespace Ritbok
 
         public override void MusDrag(int x, int y)
         {
-            if (penDown == true)
-            {
-                Bitmap pict = new Bitmap(pictureBox1.BackgroundImage);
-
-                Graphics g = Graphics.FromImage(pict);
-                Rita(Pens.Black, g);
-                pictureBox1.BackgroundImage = pict;
-
-                Coordinate c = new Coordinate(x, y);
-                listOfXY.Add(c);
-            }
         }
 
         public override void MusNer(int x, int y)
         {
-            penDown = true;
             Coordinate c = new Coordinate(x, y);
             listOfXY.Add(c);
         }
 
         public override void MusUpp(int x, int y)
         {
-            penDown = false;
+            Coordinate first = listOfXY[0];
+            listOfXY.Add(new Coordinate(first.X, y));
+            listOfXY.Add(new Coordinate(x, y));
+            listOfXY.Add(new Coordinate(x, first.Y));
+
+            Bitmap pict = new Bitmap(pictureBox1.BackgroundImage);
+
+            Graphics g = Graphics.FromImage(pict);
+            Rita(Pens.Black, g);
+            pictureBox1.BackgroundImage = pict;
+
             listOfXY.Clear();
-            oldBitmaps.Add(pictureBox1.BackgroundImage);
         }
 
         public override void Rita(Pen p, Graphics g)
         {
-            for (int i = 0; i < listOfXY.Count - 1; i++)
-            {
-                g.DrawLine(Pens.Black, listOfXY[i].X, listOfXY[i].Y, listOfXY[i + 1].X, listOfXY[i + 1].Y);
-            }
+            int maxX = Math.Max(Math.Max(listOfXY[0].X, listOfXY[1].X), Math.Max(listOfXY[2].X, listOfXY[3].X));
+            int minX = Math.Min(Math.Min(listOfXY[0].X, listOfXY[1].X), Math.Min(listOfXY[2].X, listOfXY[3].X));
+            int maxY = Math.Max(Math.Max(listOfXY[0].Y, listOfXY[1].Y), Math.Max(listOfXY[2].Y, listOfXY[3].Y));
+            int minY = Math.Min(Math.Min(listOfXY[0].Y, listOfXY[1].Y), Math.Min(listOfXY[2].Y, listOfXY[3].Y));
+            int width = maxX - minX;
+            int height = maxY - minY;
+            Rectangle rectangle = new Rectangle(minX, minY, width, height);
+            g.DrawEllipse(Pens.Black, rectangle);
             g.Dispose();
         }
     }
