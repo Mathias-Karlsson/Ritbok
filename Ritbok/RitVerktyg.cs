@@ -28,7 +28,8 @@ namespace Ritbok
         protected List<Coordinate> listOfXY;
         protected bool penDown = false;
 
-        protected List<Image> oldBitmaps = new List<Image>();
+        static protected List<Image> oldBitmaps = new List<Image>();
+        static protected Pen pen = new Pen(Color.Black);
 
         public RitVerktyg(PictureBox pictureBox)
         {
@@ -48,5 +49,31 @@ namespace Ritbok
         public abstract void MusDrag(int x, int y);
 
         public abstract void Rita(Pen p, Graphics g);
+
+        public void Undo()
+        {
+            oldBitmaps.RemoveAt(oldBitmaps.Count - 1);
+            if (oldBitmaps.Count == 0)
+            {
+                Bitmap pict = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+                oldBitmaps.Add(pict);
+            }
+            pictureBox1.BackgroundImage = oldBitmaps[oldBitmaps.Count - 1];
+        }
+
+        public void Red()
+        {
+            pen.Color = Color.Red;
+        }
+
+        public void Black()
+        {
+            pen.Color = Color.Black;
+        }
+
+        public void Blue()
+        {
+            pen.Color = Color.Blue;
+        }
     }
 }

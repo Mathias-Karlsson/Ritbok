@@ -20,6 +20,7 @@ namespace Ritbok
             InitializeComponent();
         }
 
+
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (ritVerktyg != null)
@@ -90,6 +91,38 @@ namespace Ritbok
             if (ritVerktyg != null)
             {
                 ritVerktyg.MusUpp(e.X, e.Y);
+            }
+        }
+
+        private void undoButton_Click(object sender, EventArgs e)
+        {
+            if (ritVerktyg != null)
+            {
+                ritVerktyg.Undo();
+            }
+        }
+
+        private void redButton_Click(object sender, EventArgs e)
+        {
+            if (ritVerktyg != null)
+            {
+                ritVerktyg.Red();
+            }
+        }
+
+        private void blackButton_Click(object sender, EventArgs e)
+        {
+            if (ritVerktyg != null)
+            {
+                ritVerktyg.Black();
+            }
+        }
+
+        private void blueButton_Click(object sender, EventArgs e)
+        {
+            if (ritVerktyg != null)
+            {
+                ritVerktyg.Blue();
             }
         }
     }

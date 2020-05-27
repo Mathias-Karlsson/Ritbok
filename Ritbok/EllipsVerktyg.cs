@@ -35,9 +35,10 @@ namespace Ritbok
             Bitmap pict = new Bitmap(pictureBox1.BackgroundImage);
 
             Graphics g = Graphics.FromImage(pict);
-            Rita(Pens.Black, g);
+            Rita(pen, g);
             pictureBox1.BackgroundImage = pict;
 
+            oldBitmaps.Add(pictureBox1.BackgroundImage);
             listOfXY.Clear();
         }
 
@@ -50,7 +51,7 @@ namespace Ritbok
             int width = maxX - minX;
             int height = maxY - minY;
             Rectangle rectangle = new Rectangle(minX, minY, width, height);
-            g.DrawEllipse(Pens.Black, rectangle);
+            g.DrawEllipse(pen, rectangle);
             g.Dispose();
         }
     }

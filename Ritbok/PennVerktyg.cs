@@ -22,7 +22,7 @@ namespace Ritbok
                 Bitmap pict = new Bitmap(pictureBox1.BackgroundImage);
 
                 Graphics g = Graphics.FromImage(pict);
-                Rita(Pens.Black, g);
+                Rita(pen, g);
                 pictureBox1.BackgroundImage = pict;
 
                 Coordinate c = new Coordinate(x, y);
@@ -48,7 +48,7 @@ namespace Ritbok
         {
             for (int i = 0; i < listOfXY.Count - 1; i++)
             {
-                g.DrawLine(Pens.Black, listOfXY[i].X, listOfXY[i].Y, listOfXY[i + 1].X, listOfXY[i + 1].Y);
+                g.DrawLine(pen, listOfXY[i].X, listOfXY[i].Y, listOfXY[i + 1].X, listOfXY[i + 1].Y);
             }
             g.Dispose();
         }

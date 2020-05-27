@@ -34,13 +34,11 @@
             this.triangel = new System.Windows.Forms.RadioButton();
             this.pen = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.colorwhite = new System.Windows.Forms.RadioButton();
-            this.colorblack = new System.Windows.Forms.RadioButton();
-            this.colorblue = new System.Windows.Forms.RadioButton();
-            this.colorbrown = new System.Windows.Forms.RadioButton();
-            this.colorred = new System.Windows.Forms.RadioButton();
-            this.colorgreen = new System.Windows.Forms.RadioButton();
             this.pensize = new System.Windows.Forms.TextBox();
+            this.undoButton = new System.Windows.Forms.Button();
+            this.redButton = new System.Windows.Forms.Button();
+            this.blackButton = new System.Windows.Forms.Button();
+            this.blueButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,72 +113,6 @@
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove_1);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp_1);
             // 
-            // colorwhite
-            // 
-            this.colorwhite.AutoSize = true;
-            this.colorwhite.Location = new System.Drawing.Point(12, 280);
-            this.colorwhite.Name = "colorwhite";
-            this.colorwhite.Size = new System.Drawing.Size(53, 17);
-            this.colorwhite.TabIndex = 6;
-            this.colorwhite.TabStop = true;
-            this.colorwhite.Text = "White";
-            this.colorwhite.UseVisualStyleBackColor = true;
-            // 
-            // colorblack
-            // 
-            this.colorblack.AutoSize = true;
-            this.colorblack.Location = new System.Drawing.Point(104, 280);
-            this.colorblack.Name = "colorblack";
-            this.colorblack.Size = new System.Drawing.Size(52, 17);
-            this.colorblack.TabIndex = 7;
-            this.colorblack.TabStop = true;
-            this.colorblack.Text = "Black";
-            this.colorblack.UseVisualStyleBackColor = true;
-            // 
-            // colorblue
-            // 
-            this.colorblue.AutoSize = true;
-            this.colorblue.Location = new System.Drawing.Point(195, 280);
-            this.colorblue.Name = "colorblue";
-            this.colorblue.Size = new System.Drawing.Size(46, 17);
-            this.colorblue.TabIndex = 8;
-            this.colorblue.TabStop = true;
-            this.colorblue.Text = "Blue";
-            this.colorblue.UseVisualStyleBackColor = true;
-            // 
-            // colorbrown
-            // 
-            this.colorbrown.AutoSize = true;
-            this.colorbrown.Location = new System.Drawing.Point(13, 303);
-            this.colorbrown.Name = "colorbrown";
-            this.colorbrown.Size = new System.Drawing.Size(55, 17);
-            this.colorbrown.TabIndex = 9;
-            this.colorbrown.TabStop = true;
-            this.colorbrown.Text = "Brown";
-            this.colorbrown.UseVisualStyleBackColor = true;
-            // 
-            // colorred
-            // 
-            this.colorred.AutoSize = true;
-            this.colorred.Location = new System.Drawing.Point(104, 303);
-            this.colorred.Name = "colorred";
-            this.colorred.Size = new System.Drawing.Size(45, 17);
-            this.colorred.TabIndex = 10;
-            this.colorred.TabStop = true;
-            this.colorred.Text = "Red";
-            this.colorred.UseVisualStyleBackColor = true;
-            // 
-            // colorgreen
-            // 
-            this.colorgreen.AutoSize = true;
-            this.colorgreen.Location = new System.Drawing.Point(195, 303);
-            this.colorgreen.Name = "colorgreen";
-            this.colorgreen.Size = new System.Drawing.Size(54, 17);
-            this.colorgreen.TabIndex = 11;
-            this.colorgreen.TabStop = true;
-            this.colorgreen.Text = "Green";
-            this.colorgreen.UseVisualStyleBackColor = true;
-            // 
             // pensize
             // 
             this.pensize.Location = new System.Drawing.Point(189, 12);
@@ -188,18 +120,56 @@
             this.pensize.Size = new System.Drawing.Size(100, 20);
             this.pensize.TabIndex = 12;
             // 
+            // undoButton
+            // 
+            this.undoButton.Location = new System.Drawing.Point(243, 316);
+            this.undoButton.Name = "undoButton";
+            this.undoButton.Size = new System.Drawing.Size(46, 27);
+            this.undoButton.TabIndex = 13;
+            this.undoButton.Text = "Undo";
+            this.undoButton.UseVisualStyleBackColor = true;
+            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
+            // 
+            // redButton
+            // 
+            this.redButton.Location = new System.Drawing.Point(0, 222);
+            this.redButton.Name = "redButton";
+            this.redButton.Size = new System.Drawing.Size(75, 23);
+            this.redButton.TabIndex = 14;
+            this.redButton.Text = "Red";
+            this.redButton.UseVisualStyleBackColor = true;
+            this.redButton.Click += new System.EventHandler(this.redButton_Click);
+            // 
+            // blackButton
+            // 
+            this.blackButton.Location = new System.Drawing.Point(0, 251);
+            this.blackButton.Name = "blackButton";
+            this.blackButton.Size = new System.Drawing.Size(75, 23);
+            this.blackButton.TabIndex = 15;
+            this.blackButton.Text = "Black";
+            this.blackButton.UseVisualStyleBackColor = true;
+            this.blackButton.Click += new System.EventHandler(this.blackButton_Click);
+            // 
+            // blueButton
+            // 
+            this.blueButton.Location = new System.Drawing.Point(0, 280);
+            this.blueButton.Name = "blueButton";
+            this.blueButton.Size = new System.Drawing.Size(75, 23);
+            this.blueButton.TabIndex = 16;
+            this.blueButton.Text = "Blue";
+            this.blueButton.UseVisualStyleBackColor = true;
+            this.blueButton.Click += new System.EventHandler(this.blueButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 355);
+            this.Controls.Add(this.blueButton);
+            this.Controls.Add(this.blackButton);
+            this.Controls.Add(this.redButton);
+            this.Controls.Add(this.undoButton);
             this.Controls.Add(this.pensize);
-            this.Controls.Add(this.colorgreen);
-            this.Controls.Add(this.colorred);
-            this.Controls.Add(this.colorbrown);
-            this.Controls.Add(this.colorblue);
-            this.Controls.Add(this.colorblack);
-            this.Controls.Add(this.colorwhite);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pen);
             this.Controls.Add(this.triangel);
@@ -222,13 +192,11 @@
         private System.Windows.Forms.RadioButton triangel;
         private System.Windows.Forms.RadioButton pen;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RadioButton colorwhite;
-        private System.Windows.Forms.RadioButton colorblack;
-        private System.Windows.Forms.RadioButton colorblue;
-        private System.Windows.Forms.RadioButton colorbrown;
-        private System.Windows.Forms.RadioButton colorred;
-        private System.Windows.Forms.RadioButton colorgreen;
         private System.Windows.Forms.TextBox pensize;
+        private System.Windows.Forms.Button undoButton;
+        private System.Windows.Forms.Button redButton;
+        private System.Windows.Forms.Button blackButton;
+        private System.Windows.Forms.Button blueButton;
     }
 }
 
