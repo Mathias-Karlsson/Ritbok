@@ -29,7 +29,7 @@ namespace Ritbok
         protected bool penDown = false;
 
         static protected List<Image> oldBitmaps = new List<Image>();
-        static protected Pen pen = new Pen(Color.Black);
+        static public Pen pen = new Pen(Color.Black);
 
         public RitVerktyg(PictureBox pictureBox)
         {

@@ -39,6 +39,7 @@
             this.redButton = new System.Windows.Forms.Button();
             this.blackButton = new System.Windows.Forms.Button();
             this.blueButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,6 +120,7 @@
             this.pensize.Name = "pensize";
             this.pensize.Size = new System.Drawing.Size(100, 20);
             this.pensize.TabIndex = 12;
+            this.pensize.TextChanged += new System.EventHandler(this.pensize_TextChanged);
             // 
             // undoButton
             // 
@@ -160,11 +162,21 @@
             this.blueButton.UseVisualStyleBackColor = true;
             this.blueButton.Click += new System.EventHandler(this.blueButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(148, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Bredd";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 355);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.blueButton);
             this.Controls.Add(this.blackButton);
             this.Controls.Add(this.redButton);
@@ -197,6 +209,7 @@
         private System.Windows.Forms.Button redButton;
         private System.Windows.Forms.Button blackButton;
         private System.Windows.Forms.Button blueButton;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -125,5 +125,18 @@ namespace Ritbok
                 ritVerktyg.Blue();
             }
         }
+
+        private void pensize_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                RitVerktyg.pen.Width = Convert.ToInt32(pensize.Text);
+            }
+            catch (Exception)
+            {
+                pensize.Text = "1";
+                RitVerktyg.pen.Width = 1;
+            }
+        }
     }
 }
